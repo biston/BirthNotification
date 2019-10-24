@@ -106,7 +106,6 @@
             @yield('content')
         </main>
     </div>
-
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('extra-js')
 </body>

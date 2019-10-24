@@ -11,7 +11,8 @@
                   <div class="card-body m-4 bg-light">
                     <div class="row">
                         @foreach ($employes as $employe)
-                        <div class="col-md-4 pb-4">
+                        <a href="{{ route('employes.show',$employe) }}">
+                        <div class="col-md-3 pb-4">
                             <div class="bg-secondary border border-dark">
                             <div class="p-3 d-flex justify-content-center">
                                 <img src="{{ asset('storage').'/'.$employe->photo }}" class="rounded-circle border border-dark" width="150" height="150">
@@ -19,12 +20,31 @@
                             <div class="d-flex justify-content-center text-uppercase text-white font-weight-bold">
                               <span  class="mr-2">{{ $employe->prenoms }}</span>  <span>{{ $employe->nom }}</span>
                             </div>
+
+                            @if ($employe->left_days===0)
+                                <div class="d-flex justify-content-center bg-warning text-dark font-weight-bold p-2 m-2">
+                                    <span  class="mr-2">Joyeux Anniversaire</span>
+                                </div>
+                            @elseif($employe->left_days<5)
+                               <div class="d-flex justify-content-center bg-primary  text-white font-weight-bold p-2 m-2">
+                                    <span  class="mr-2">Dans {{ $employe->left_days}} jour(s)</span>
+                                </div>
+                            @else
+                                <div class="d-flex justify-content-center bg-white text-primary font-weight-bold p-2 m-2">
+                                    <span  class="mr-2">Dans {{ $employe->left_days}} jour(s)</span>
+                                </div>
+                            @endif
                           </div>
+                        </a>
                        </div>
                        @endforeach
                       </div>
                  </div>
             </div>
+
+        </div>
+        <div class="col-md-3">
+                <calendar></calendar>
 
         </div>
     </div>

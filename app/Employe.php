@@ -12,6 +12,11 @@ class Employe extends Model
     protected $dates = [
         'birth_date',
     ];
+    protected $appends = [
+        'left_days'
+    ];
+
+
 
     public function historiques(){
         return $this->hasMany(App\historiques::class);
@@ -25,6 +30,11 @@ class Employe extends Model
         return $query
                     ->whereRaw('DATE_FORMAT(birth_date, "%m-%d") >= ?', [Carbon::today()->format('m-d')])
                     ->orderBy('birth_date','asc')
-                    ->take(6);
+                    ->take(8);
+    }
+
+    public function getLeftDaysAttribute()
+    {
+           return $this->birth_date->diffInDays(Carbon::today());
     }
 }
