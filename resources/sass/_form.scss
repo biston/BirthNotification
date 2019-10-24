@@ -1,0 +1,35 @@
+
+.form-control,.btn{
+  border-radius: 0.0rem;
+}
+
+.text-abi{
+  color:$abi;
+}
+
+.bg-abi{
+  background-color: $abi;
+}
+
+.abi-border{
+  border: 0.4px solid #622800;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+
+.td-lg{
+ width: 20px;
+ text-align: center;
+}
+.td-130{
+  width: 130px;
+  text-align: center;
+ }
