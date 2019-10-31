@@ -27,6 +27,7 @@ class EmployeCreateRequest extends FormRequest
             'nom'=>'required|max:255|string',
             'prenoms'=>'required|string',
             'email'=>'email|required|unique:employes',
+            'matricule'=>'required|numeric',
             'birth_date'=>'date'
         ];
     }

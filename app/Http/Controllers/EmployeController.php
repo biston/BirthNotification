@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use App\Employe;
+use Carbon\Carbon;
+use App\Mail\HappyBirthDay;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\EmployeEditRequest;
@@ -16,9 +19,13 @@ class EmployeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __contructor(){
+      $this->middleware='auth';
+    }
+
     public function index()
     {
-        return view('employes.index')->with('employes',Employe::paginate(3));
+        return view('employes.index')->with('employes',Employe::paginate(5));
     }
 
     /**
@@ -44,6 +51,7 @@ class EmployeController extends Controller
        $photo=($request->has('photo'))?$request->photo->store('uploads','public'):'default/avatar.jpg';
 
        $employe=Employe::Create([
+          'matricule'=>$request->matricule,
           'nom'=>$request->nom,
           'prenoms'=>$request->prenoms,
           'birth_date'=>$request->birth_date,
@@ -99,6 +107,7 @@ class EmployeController extends Controller
             $employe->photo=$request->photo->store('uploads','public');
          }
 
+          $employe->matricule=$request->matricule;
           $employe->nom=$request->nom;
           $employe->prenoms=$request->prenoms;
           $employe->birth_date=$request->birth_date;
@@ -121,4 +130,18 @@ class EmployeController extends Controller
         Employe::destroy($id);
         return redirect()->back();
     }
+
+   public function sendBirthDayEmail(Employe $employe){
+
+      Mail::to($employe->email)->send(new HappyBirthDay());
+
+      $employe->historiques()->create([
+          'employe_id'=>$employe->id,
+          'status'=>'OK',
+          'date_traitement'=>Carbon::now()
+      ]);
+
+
+      return redirect()->back()->with('status','Employé notifié avec succès');
+   }
 }

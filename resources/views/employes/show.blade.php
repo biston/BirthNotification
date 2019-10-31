@@ -3,12 +3,17 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+
         <div class="col-md-6">
             <div class="card abi-border">
                 <div class="card-header bg-abi text-white text-center font-weight-bold">PROFILE EMPLOYE</div>
                   <div class="card-body m-4 bg-light border border-dark">
                     <div>
-
+                      @if (session('status'))
+                        <div class="alert alert-success font-weight-bold text-center" role="alert">
+                            {{ session('status') }}
+                        </div>
+                       @endif
                       <div class="bg-secondary mb-3 pb-4 border border-primary">
                           <div class="p-3 d-flex justify-content-center">
                               <img src="{{ asset('storage').'/'.$employe->photo }}" class="rounded-circle" width="150" height="150">
@@ -31,7 +36,7 @@
                       <div  class="bg-white  m-4 py-3 px-4 border border-primary">
                         <div class="row mb-0  d-flex justify-content-end">
                              <div class="col-md-4">
-                                <a href="#" class="btn btn-dark btn-block font-weight-bolder">Notifier </a>
+                                <a href="{{ route('employes.notify',$employe) }}" class="btn btn-dark btn-block font-weight-bolder">Notifier </a>
                              </div>
                         </div>
 

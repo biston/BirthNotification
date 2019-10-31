@@ -12,14 +12,13 @@ class Employe extends Model
     protected $dates = [
         'birth_date',
     ];
+
     protected $appends = [
         'left_days'
     ];
 
-
-
     public function historiques(){
-        return $this->hasMany(App\historiques::class);
+        return $this->hasMany(Historique::class);
     }
 
     public function scopeBirthday($query, Carbon $date = null)
@@ -28,10 +27,19 @@ class Employe extends Model
             $date = Carbon::today();
         }
         return $query
+                    ->where('activer_envoi',true)
                     ->whereRaw('DATE_FORMAT(birth_date, "%m-%d") >= ?', [Carbon::today()->format('m-d')])
                     ->orderBy('birth_date','asc')
                     ->take(8);
     }
+
+    public function scopeBirthdayToday($query)
+    {
+         return $query
+                    ->where('activer_envoi',true)
+                    ->whereRaw('DATE_FORMAT(birth_date, "%m-%d") = ?', [Carbon::today()->format('m-d')]);
+    }
+
 
     public function getLeftDaysAttribute()
     {

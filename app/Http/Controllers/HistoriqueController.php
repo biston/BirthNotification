@@ -14,7 +14,7 @@ class HistoriqueController extends Controller
      */
     public function index()
     {
-        //
+        return view('historiques.index')->with('historiques',Historique::paginate(3));
     }
 
     /**
@@ -80,6 +80,7 @@ class HistoriqueController extends Controller
      */
     public function destroy(Historique $historique)
     {
-        //
+        Historique::destroy($historique->id);
+        return redirect()->back();
     }
 }

@@ -26,6 +26,7 @@ class EmployeEditRequest extends FormRequest
         return [
             'nom'=>'required|max:255|string',
             'prenoms'=>'required|string',
+            'matricule'=>'required|numeric',
             'birth_date'=>'date'
         ];
     }

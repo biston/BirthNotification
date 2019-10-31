@@ -15,6 +15,7 @@
                         <table class="table table-bordered" id="employes-table">
                                 <thead style="background-color:#BBB">
                                   <tr>
+                                    <th >Matricule</th>
                                     <th >Nom</th>
                                     <th >Prenoms</th>
                                     <th >Email</th>
@@ -26,6 +27,7 @@
                                 <tbody>
                                     @forelse ($employes as $employe)
                                           <tr>
+                                            <td>{{ $employe->matricule }}</td>
                                             <td>{{ $employe->nom }}</td>
                                             <td>{{ $employe->prenoms }}</td>
                                             <td>{{ $employe->email }}</td>

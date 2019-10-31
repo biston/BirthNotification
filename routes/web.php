@@ -17,5 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('employes', 'EmployeController');
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('employes', 'EmployeController');
+    Route::get('/employes/notify/{employe}' , 'EmployeController@sendBirthDayEmail')->name('employes.notify');
+    Route::get('/historiques' , 'HistoriqueController@index')->name('historiques.index');
+    Route::delete('/historiques/{historique}' , 'HistoriqueController@destroy')->name('historiques.destroy');
+});

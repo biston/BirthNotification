@@ -12,7 +12,7 @@ class Historique extends Model
         'date_traitement',
     ];
     public function employe(){
-        return $this->belongsTo(App\Employe);
+        return $this->belongsTo(Employe::class);
     }
 
 }

@@ -28,7 +28,7 @@
                     <div class="d-flex justify-content-center">
                         <div> <img src="{{ asset('img/logo.png') }}" width="150" height="45"></div>
                         <div class="d-flex align-items-end mr-3 text-muted" >|</div>
-                        <div class="d-flex align-items-end text-muted"><span>{{config('app.name', 'Laravel') }}</span></div>
+                        <div class="d-flex align-items-end text-dark"><span>{{config('app.name', 'Laravel') }}</span></div>
                     </div>
 
                 </a>
@@ -57,10 +57,15 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item ">
+                                <a  class="nav-link font-weight-bold" href="{{ route('home') }}" v-pre>
+                                    <i class="fa fa-home fa-lg text-abi mr-1" aria-hidden="true"></i><span class="text-dark mr-1">Accueil</span>
+                                </a>
+                            </li>
                               <li class="nav-item dropdown mr-3">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle uppercase font-weight-bold" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <i class="fa fa-users mr-1" aria-hidden="true"></i>
-                                        EMPLOYES
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle font-weight-bold" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fa fa-users mr-1 text-abi" aria-hidden="true"></i>
+                                        <span class="text-dark">Employes</span>
                                         <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -72,15 +77,15 @@
                                         <i class="fa fa-plus-circle mr-1" aria-hidden="true"></i>
                                         Créer
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('employes.create') }}">
+                                    <a class="dropdown-item" href="{{ route('historiques.index') }}">
                                         <i class="fa fa-envelope mr-1" aria-hidden="true"></i>
                                         Notifications
                                     </a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle uppercase font-weight-bold" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>                       <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle font-weight-bold" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>                       <i class="fa fa-user-circle text-abi" aria-hidden="true"></i>
+                                   <span class="text-dark text-capitalize"> {{ Auth::user()->name }} </span> <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -96,7 +101,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                         @endguest
                     </ul>
                 </div>
             </div>

@@ -17,6 +17,19 @@
 
                         @csrf
                         <div class="form-group row">
+                            <label for="matricule" class="col-md-3 col-form-label text-md-left font-weight-bold">Matricule</label>
+
+                            <div class="col-md-5">
+                                <input id="matricule" type="text" class="form-control @error('matricule') is-invalid @enderror" name="matricule" value="{{ old('matricule')??$employe->matricule }}" autofocus>
+
+                                @error('matricule')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="nom" class="col-md-3 col-form-label text-md-left font-weight-bold">Nom</label>
 
                             <div class="col-md-5">
@@ -104,10 +117,17 @@
 
                         <div class="form-group row mb-0  d-flex justify-content-end">
                             <div class="col-md-3">
+
+                                  <a class="btn btn-primary btn-block font-weight-bolder" href="{{ route('employes.index') }}">
+                                        <i class="fa fa-undo" aria-hidden="true"></i>  RETOUR
+                                </a>
+                            </div>
+                            <div class="col-md-3">
                                 <button type="submit" class="btn btn-dark btn-block font-weight-bolder">
-                                    VALIDER
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i> CREER
                                 </button>
                             </div>
+
                         </div>
                     </form>
                 </div>
