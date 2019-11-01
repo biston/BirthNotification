@@ -47,13 +47,15 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">
-                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                    Connexion</a>
+                                <a class="nav-link text-dark font-weight-bold" href="{{ route('login') }}">
+                                        <i class="fa fa-sign-out text-abi mr-1" aria-hidden="true"></i>
+                                    Connexion
+                                </a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Créer un compte</a>
+                                <a class="nav-link text-dark font-weight-bold" href="{{ route('register') }}"><i class="fa fa-plus-circle text-abi mr-1" aria-hidden="true"></i>Créer un compte
+                                </a>
                                 </li>
                             @endif
                         @else

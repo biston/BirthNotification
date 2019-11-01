@@ -1,5 +1,5 @@
 @component('mail::message')
-Bonjour M/Mme **AGNIN**
+Bonjour M/Mme **{{ $employe->nom }}**
 <br>
 
 ![An image](http://localhost:8000/img/Happy_1.jpg)

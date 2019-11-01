@@ -28,9 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-/*        $received_employes=Historique::where('date_traitement',Carbon::today())->get()->pluck('employe_id');
-       dd(Employe::BirthdayToday()->whereNotIn('id',$received_employes)->get());
- */
+
         return view('home')->with('employes',Employe::birthday()->get());
     }
 }

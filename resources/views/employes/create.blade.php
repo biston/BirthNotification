@@ -115,16 +115,15 @@
 
                         <hr class="mt-5">
 
-                        <div class="form-group row mb-0  d-flex justify-content-end">
+                        <div class="form-group row mb-0  d-flex justify-content-center">
                             <div class="col-md-3">
-
-                                  <a class="btn btn-primary btn-block font-weight-bolder" href="{{ route('employes.index') }}">
-                                        <i class="fa fa-undo" aria-hidden="true"></i>  RETOUR
+                                <a class="btn btn-primary btn-block font-weight-bolder" href="{{ route('employes.index') }}">
+                                  <i class="fa fa-undo" aria-hidden="true"></i> RETOUR
                                 </a>
                             </div>
                             <div class="col-md-3">
                                 <button type="submit" class="btn btn-dark btn-block font-weight-bolder">
-                                <i class="fa fa-floppy-o" aria-hidden="true"></i> CREER
+                                   <i class="fa fa-floppy-o" aria-hidden="true"></i> CREER
                                 </button>
                             </div>
 

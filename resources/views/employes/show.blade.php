@@ -34,9 +34,14 @@
                       </div>
                       <hr>
                       <div  class="bg-white  m-4 py-3 px-4 border border-primary">
-                        <div class="row mb-0  d-flex justify-content-end">
-                             <div class="col-md-4">
-                                <a href="{{ route('employes.notify',$employe) }}" class="btn btn-dark btn-block font-weight-bolder">Notifier </a>
+                        <div class="row mb-0  d-flex justify-content-center">
+                             <div class="col-md-5">
+                                <a href="{{ route('employes.notify',$employe) }}" class="btn btn-primary btn-block font-weight-bolder">
+                                  <i class="fa fa-undo mr-1" aria-hidden="true"></i>RETOUR </a>
+                             </div>
+                             <div class="col-md-5">
+                                <a href="{{ route('employes.notify',$employe) }}" class="btn btn-dark btn-block font-weight-bolder">
+                                  <i class="fa fa-envelope-o mr-1" aria-hidden="true"></i>NOTIFIER </a>
                              </div>
                         </div>
 

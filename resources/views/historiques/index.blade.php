@@ -14,6 +14,7 @@
                                 <thead style="background-color:#BBB">
                                   <tr>
                                     <th >Date de traitement</th>
+                                    <th >Matricule</th>
                                     <th >Nom employé</th>
                                     <th >Prenoms employé</th>
                                     <th class="td-130">Email</th>
@@ -25,6 +26,7 @@
                                     @forelse ($historiques as $historique)
                                           <tr>
                                             <td>{{ $historique->date_traitement->format('Y-m-d') }}</td>
+                                            <td>{{ $historique->employe->matricule }}</td>
                                             <td>{{ $historique->employe->nom }}</td>
                                             <td>{{ $historique->employe->prenoms }}</td>
                                             <td>{{ $historique->employe->email }}</td>

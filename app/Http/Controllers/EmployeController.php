@@ -133,7 +133,7 @@ class EmployeController extends Controller
 
    public function sendBirthDayEmail(Employe $employe){
 
-      Mail::to($employe->email)->send(new HappyBirthDay());
+      Mail::to($employe->email)->send(new HappyBirthDay($employe));
 
       $employe->historiques()->create([
           'employe_id'=>$employe->id,

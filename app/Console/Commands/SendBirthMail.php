@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Employe;
 use Carbon\Carbon;
+use App\Historique;
 use App\Mail\HappyBirthDay;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
@@ -41,14 +42,24 @@ class SendBirthMail extends Command
      */
     public function handle()
     {
-        $employe=Employe::find(4);
-        Mail::to($employe->email)->send(new HappyBirthDay());
 
-        $employe->historiques()->create([
-            'employe_id'=>$employe->id,
-            'status'=>'OK',
-            'date_traitement'=>Carbon::now()
-        ]);
+
+
+        $received_employes=Historique::where('date_traitement',Carbon::today())->get()->pluck('employe_id');
+        Employe::BirthdayToday()->whereNotIn('id',$received_employes)
+                                ->get()
+                                ->each(function($employe,$key){
+                                    sleep(10);
+                                    Mail::to($employe->email)->send(new HappyBirthDay($employe));
+
+                                    $employe->historiques()->create([
+                                        'employe_id'=>$employe->id,
+                                        'status'=>'OK',
+                                        'date_traitement'=>Carbon::now()
+                                    ]);
+                                }) ;
+
+
 
     }
 }
