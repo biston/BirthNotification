@@ -1,5 +1,7 @@
 <?php
 
+use App\Employe;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +24,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/historiques' , 'HistoriqueController@index')->name('historiques.index');
     Route::delete('/historiques/{historique}' , 'HistoriqueController@destroy')->name('historiques.destroy');
 });
+
+// Route::get('/test' , function(){
+//     return view('emails.birthday02')->with('employe',Employe::find(1));
+// });

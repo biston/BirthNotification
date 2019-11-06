@@ -30,6 +30,8 @@ class HappyBirthDay extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->markdown('emails.birthday')->with('employe',$this->employe);
+        return $this->view('emails.birthday01')
+                    ->subject('Joyeux anniversaire')
+                    ->with(['message' => $this]);
     }
 }

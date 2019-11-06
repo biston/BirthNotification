@@ -57,6 +57,7 @@ class SendBirthMail extends Command
                                         'status'=>'OK',
                                         'date_traitement'=>Carbon::now()
                                     ]);
+
                                 }) ;
 
 
