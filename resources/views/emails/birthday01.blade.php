@@ -10,24 +10,25 @@
 /* vietnamese */
 
   *{
-      font-size: 14px;
-      font-family:"Lucida Calligraphy";
-
+      font-size: 22px;
+      font-weight: 100px;
+      font-family:"Brush Script MT";
     }
 
    </style>
 
 </head>
 <body>
-  <div>
+  <div >
     <p> Bonjour M/<span  style="color:#ECA057;">  Mme <strong>{{ $employe->nom }}</strong>,</span></p>
     <div>
-
-      <p>En ce jour très spécial pour toi, la Direction Générale et l’ensemble du personnel ABI vous souhaite</p>
-      <p style="color:#ECA057;font-weight: bolder ">Joyeux Anniversaire !!!!!!!!</p>
-      Santé, Paix et Prospérité !
-
-       <p><img src="{{ $message->embed(asset('storage').'/'.'default/aniv5.gif')}}" width="770" height="400"></p>
+      <p style="margin-left: 270px;border-radius: 50%;">
+        <img src="{{$message->embed(asset('storage').'/'.$employe->photo) }}"  width="130" height="130">
+      </p>
+      <p>En ce jour très spécial pour toi, la Direction Générale et l’ensemble du personnel ABI te souhaite</p>
+      <p style="color:#ECA057;font-weight: bolder;font-size: 32px;margin-left: 200px;">Joyeux Anniversaire !!!!!!!!</p>
+      <p style="margin-left: 235px;">Santé, Paix et Prospérité !</p>
+       <p><img src="{{ $message->embed(asset('storage').'/'.'default/aniv8.jpg')}}" width="770" height="400"></p>
 
         <p>Cordialement,</p>
 
