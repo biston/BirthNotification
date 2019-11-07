@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card abi-border">
-                <div class="card-header bg-abi text-white text-center font-weight-bold">CREER UN EMPLOYE </div>
+                <div class="card-header bg-abi text-white text-center font-weight-bold">{{ isset($employe->id)?'MODIFICATION EMPLOYE':'CREATION EMPLOYE' }}  </div>
                   <div class="card-body mt-4 mx-4">
 
                     @if (isset($employe->id))
@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-md-3">
                                 <button type="submit" class="btn btn-dark btn-block font-weight-bolder">
-                                   <i class="fa fa-floppy-o" aria-hidden="true"></i> CREER
+                                   <i class="fa fa-floppy-o" aria-hidden="true"></i> VALIDER
                                 </button>
                             </div>
 
