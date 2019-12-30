@@ -14,7 +14,7 @@ class HistoriqueController extends Controller
      */
     public function index()
     {
-        return view('historiques.index')->with('historiques',Historique::paginate(3));
+        return view('historiques.index')->with('historiques',Historique::latest()->paginate(10));
     }
 
     /**

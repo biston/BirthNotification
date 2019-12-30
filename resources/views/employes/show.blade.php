@@ -25,7 +25,7 @@
                       <div>
                         <div class="bg-white  m-4 py-3 px-4 border border-primary">
                               <span><i class="fa fa-birthday-cake fa-2x mr-5" aria-hidden="true"></i></span>
-                              <span>Né le  {{ $employe->birth_date->format('l j F Y')  }}</span>
+                              <span>Né le  {{ $employe->fr_birth_date }}</span>
                         </div>
                         <div class="bg-white m-4 py-3 px-4 border border-primary">
                           <span><i class="fa fa-envelope fa-2x mr-5" aria-hidden="true"></i></span>
@@ -36,7 +36,7 @@
                       <div  class="bg-white  m-4 py-3 px-4 border border-primary">
                         <div class="row mb-0  d-flex justify-content-center">
                              <div class="col-md-5">
-                                <a href="{{ route('employes.notify',$employe) }}" class="btn btn-primary btn-block font-weight-bolder">
+                                <a href="{{ route('employes.index') }}" class="btn btn-primary btn-block font-weight-bolder">
                                   <i class="fa fa-undo mr-1" aria-hidden="true"></i>RETOUR </a>
                              </div>
                              <div class="col-md-5">

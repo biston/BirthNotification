@@ -14,7 +14,8 @@ class Employe extends Model
     ];
 
     protected $appends = [
-        'left_days'
+        'left_days',
+        'fr_birth_date'
     ];
 
     public function historiques(){
@@ -44,5 +45,12 @@ class Employe extends Model
     public function getLeftDaysAttribute()
     {
            return $this->birth_date->diffInDays(Carbon::today());
+    }
+
+    public function getFrBirthDateAttribute(){
+        Carbon::setLocale('fr');
+        $date = Carbon::parse($this->birth_date, 'UTC');
+        return $date->isoFormat('Do MMMM');
+
     }
 }

@@ -33,5 +33,7 @@ export default {
 </script>
 
 <style>
-
+.vfc-styles-conditional-class .vfc-main-container{
+font-family: 'Nunito', sans-serif !important;
+}
 </style>
