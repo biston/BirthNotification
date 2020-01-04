@@ -27,6 +27,7 @@ class EmployeEditRequest extends FormRequest
             'nom'=>'required|max:255|string',
             'prenoms'=>'required|string',
             'matricule'=>'required|numeric',
+            'civilite'=>'required',
             'birth_date'=>'date'
         ];
     }

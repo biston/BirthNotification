@@ -16,6 +16,7 @@
                                 <thead style="background-color:#BBB">
                                   <tr>
                                     <th >Matricule</th>
+                                    <th >Civilite</th>
                                     <th >Nom</th>
                                     <th >Prenoms</th>
                                     <th >Email</th>
@@ -28,10 +29,11 @@
                                     @forelse ($employes as $employe)
                                           <tr>
                                             <td>{{ $employe->matricule }}</td>
+                                            <td>{{ $employe->civilite }}</td>
                                             <td>{{ $employe->nom }}</td>
                                             <td>{{ $employe->prenoms }}</td>
                                             <td>{{ $employe->email }}</td>
-                                            <td class="td-130">{{ $employe->birth_date->format('Y-m-d') }}</td>
+                                            <td class="td-130">{{ $employe->fr_birth_date }}</td>
                                             <td class="td-lg" >@if ($employe->activer_envoi)
                                               <i class="fa fa-check-circle text-success fa-lg" aria-hidden="true"></i>
                                             @else

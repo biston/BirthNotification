@@ -25,7 +25,7 @@ class EmployeController extends Controller
 
     public function index()
     {
-        return view('employes.index')->with('employes',Employe::paginate(5));
+        return view('employes.index')->with('employes',Employe::OrderBy('nom','ASC')->paginate(10));
     }
 
     /**
@@ -52,6 +52,7 @@ class EmployeController extends Controller
 
        $employe=Employe::Create([
           'matricule'=>$request->matricule,
+          'civilite'=>$request->civilite,
           'nom'=>$request->nom,
           'prenoms'=>$request->prenoms,
           'birth_date'=>$request->birth_date,
@@ -108,6 +109,7 @@ class EmployeController extends Controller
          }
 
           $employe->matricule=$request->matricule;
+          $employe->civilite=$request->civilite;
           $employe->nom=$request->nom;
           $employe->prenoms=$request->prenoms;
           $employe->birth_date=$request->birth_date;

@@ -28,6 +28,7 @@ class EmployeCreateRequest extends FormRequest
             'prenoms'=>'required|string',
             'email'=>'email|required|unique:employes',
             'matricule'=>'required|numeric',
+            'civilite'=>'required',
             'birth_date'=>'date'
         ];
     }

@@ -20,9 +20,26 @@
                             <label for="matricule" class="col-md-3 col-form-label text-md-left font-weight-bold">Matricule</label>
 
                             <div class="col-md-5">
-                                <input id="matricule" type="text" class="form-control @error('matricule') is-invalid @enderror" name="matricule" value="{{ old('matricule')??$employe->matricule }}" autofocus>
+                                <input id="matricule" type="text" class="form-control @error('matricule') is-invalid @enderror" name="matricule" value="{{ old('matricule',$employe->matricule) }}" autofocus>
 
                                 @error('matricule')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="civilite" class="col-md-3 col-form-label text-md-left font-weight-bold">Civilite</label>
+
+                            <div class="col-md-5">
+                                <select name="civilite" id="civilite" class="form-control  @error('civilite') is-invalid @enderror" autofocus>
+                                    <option value="M."    {{ old('civilite',$employe->civilite) == 'M.' ? 'selected' : '' }}>Monsieur</option>
+                                    <option value="Mme."  {{ old('civilite',$employe->civilite) == 'Mme.' ? 'selected' : '' }}>Madame</option>
+                                    <option value="Mlle." {{ old('civilite',$employe->civilite) == 'Mlle.' ? 'selected' : '' }}>Mademoiselle</option>
+                                </select>
+
+                                @error('civilite')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -33,7 +50,7 @@
                             <label for="nom" class="col-md-3 col-form-label text-md-left font-weight-bold">Nom</label>
 
                             <div class="col-md-5">
-                                <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom')??$employe->nom }}" autofocus>
+                                <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom',$employe->nom) }}" autofocus>
 
                                 @error('nom')
                                     <span class="invalid-feedback" role="alert">
@@ -47,7 +64,7 @@
                             <label for="prenoms" class="col-md-3 col-form-label text-md-left font-weight-bold">Prenoms</label>
 
                             <div class="col-md-9">
-                                <input id="prenoms" type="text" class="form-control @error('prenoms') is-invalid @enderror" name="prenoms" value="{{ old('prenoms')?? $employe->prenoms}}" >
+                                <input id="prenoms" type="text" class="form-control @error('prenoms') is-invalid @enderror" name="prenoms" value="{{ old('prenoms',$employe->prenoms)}}" >
 
                                 @error('prenoms')
                                     <span class="invalid-feedback" role="alert">
@@ -61,8 +78,7 @@
 
                                 <div class="col-md-9">
 
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email')?? $employe->email}}" @isset($employe->id))
-                                    readonly  @endisset >
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email',$employe->email)}}" @isset($employe->id)) readonly  @endisset >
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -75,7 +91,7 @@
                             <label for="birth_date" class="col-md-3 col-form-label text-md-left font-weight-bold">Date de naissance</label>
 
                             <div class="col-md-5">
-                                <input id="birth_date" type="text" class="form-control @error('birth_date') is-invalid @enderror" name="birth_date" value="{{ old('birth_date') ?? $employe->birth_date }}">
+                                <input id="birth_date" type="text" class="form-control @error('birth_date') is-invalid @enderror" name="birth_date" value="{{ old('birth_date',$employe->birth_date) }}">
 
                                 @error('birth_date')
                                     <span class="invalid-feedback" role="alert">
@@ -104,7 +120,7 @@
                             <label  class="col-md-3 col-form-label text-md-left font-weight-bold">Statut d'envoi</label>
                             <div class="col-md-4">
                                 <div class="form-check pt-1">
-                                    <input class="form-check-input" type="checkbox" name="activer_envoi" id="activer_envoi" {{(old('activer_envoi')?? $employe->activer_envoi) ? 'checked' : '' }}>
+                                    <input class="form-check-input" type="checkbox" name="activer_envoi" id="activer_envoi" {{(old('activer_envoi',$employe->activer_envoi)) ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="activer_envoi">
                                         Activé

@@ -20,7 +20,7 @@
 </head>
 <body>
   <div >
-    <p> Bonjour M/<span  style="color:#ECA057;">  Mme <strong>{{ $employe->nom }}</strong>,</span></p>
+    <p> Bonjour <span  style="color:#ECA057;">  $employe->civilite <strong>{{ $employe->nom }}</strong>,</span></p>
     <div>
  {{--      <p style="margin-left: 270px;border-radius: 50%;">
         <img src="{{$message->embed(asset('storage').'/'.$employe->photo) }}"  width="130" height="130">
@@ -28,7 +28,10 @@
       <p>En ce jour très spécial pour toi, la Direction Générale et l’ensemble du personnel ABI te souhaite</p>
       <p style="color:#ECA057;font-weight: bolder;font-size: 32px;margin-left: 200px;">Joyeux Anniversaire !!!!!!!!</p>
       <p style="margin-left: 235px;">Santé, Paix et Prospérité !</p>
-       <p><img src="{{ $message->embed(asset('storage').'/'.'default/aniv_'.(string)rand(1,5).'.jpg')}}" width="770" height="400"></p>
+
+      <p><img src="{{ $message->embed(asset('storage').'/default/aniv_1.jpg')}}" width="770" height="400"></p>
+
+      {{-- <p><img src="{{ $message->embed(asset('storage').'/'.'default/aniv_'.(string)rand(1,5).'.jpg')}}" width="770" height="400"></p> --}}
 
         <p>Cordialement,</p>
 
