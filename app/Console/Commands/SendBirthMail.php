@@ -44,7 +44,6 @@ class SendBirthMail extends Command
     {
         //liste des Id des employes qui ont déjà recu la notification
         $received_employes=Historique::where('date_traitement',Carbon::today())->get()->pluck('employe_id');
-
         //envoyer a tous les employes saufs ceux  qui nont pas recu
         Employe::BirthdayToday()->whereNotIn('id',$received_employes)
                                 ->get()
