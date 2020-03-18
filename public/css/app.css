@@ -12192,6 +12192,11 @@ a.text-dark:focus {
   text-transform: capitalize;
 }
 
+tr,
+.form-control {
+  border: 1px solid #444;
+}
+
 .td-lg {
   width: 20px;
   text-align: center;

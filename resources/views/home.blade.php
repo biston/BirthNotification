@@ -15,7 +15,7 @@
                         <div class="col-md-3 pb-4">
                             <div class="bg-secondary border border-dark">
                             <div class="p-3 d-flex justify-content-center">
-                                <img src="{{ asset('storage').'/'.$employe->photo }}" class="rounded-circle border border-dark" width="150" height="150">
+                                <img src="{{ asset('img/').'/'.$employe->photo }}" class="rounded-circle border border-dark" width="150" height="150">
                             </div>
                             <div class="d-flex justify-content-center text-uppercase text-white font-weight-bold">
                               <span  class="mr-2">{{ $employe->prenoms }}</span>  <span>{{ $employe->nom }}</span>

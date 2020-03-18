@@ -30,10 +30,9 @@
       <p style="margin-left: 235px;">Santé, Paix et Prospérité !</p>
 
 
-       <p><img src="{{ $message->embed(asset('storage').'/'.'default/aniv_'.(string)rand(1,5).'.jpg')}}" width="770" height="400"></p>
+       <p><img src="{{ $message->embed(asset('img/aniv_'.(string)rand(1,5).'.jpg')}}" width="770" height="400"></p>
 
         <p>Cordialement,</p>
-
      </div>
 
 </div>
