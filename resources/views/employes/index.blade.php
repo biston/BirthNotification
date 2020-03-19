@@ -12,8 +12,8 @@
                          <a href="{{ route('employes.create') }}"><i class="fa fa-plus-circle fa-3x text-dark" aria-hidden="true"></i>
                        </a>
                       </div>
-                        <table class="table table-bordered" id="employes-table">
-                                <thead style="background-color:#BBB">
+                        <table class="table table-bordered mt-2" id="employes-table">
+                                <thead class=" bg-dark text-white">
                                   <tr>
                                     <th >Matricule</th>
                                     <th >Civilite</th>

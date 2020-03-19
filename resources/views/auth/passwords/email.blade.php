@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card abi-border">
+            <div class="card abi-border" style="border: 1px solid #666;">
                 <div class="card-header bg-abi text-white text-center font-weight-bold">REINITIALISATION DE MOT DE PASSE</div>
 
                 <div class="card-body  mt-4 mx-4">

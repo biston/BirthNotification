@@ -36,6 +36,6 @@
      </div>
 
 </div>
-<div> <img src="{{ $message->embed(asset('img/logo.png'))}}" width="200" height="60"></div>
+<div> <img src="{{ $message->embed(asset('img/logo.jpg'))}}" width="200" height="60"></div>
 </body>
 </html>

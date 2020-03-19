@@ -26,9 +26,13 @@
   text-transform: capitalize;
 }
 
-tr,.form-control{
+.form-control{
   border: 1px solid #444;
 }
+.table-bordered th, .table-bordered td {
+  border: 1px solid #555;
+}
+
 .td-lg{
  width: 20px;
  text-align: center;

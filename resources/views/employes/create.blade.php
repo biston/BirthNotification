@@ -36,7 +36,6 @@
                                 <select name="civilite" id="civilite" class="form-control  @error('civilite') is-invalid @enderror" autofocus>
                                     <option value="M."    {{ old('civilite',$employe->civilite) == 'M.' ? 'selected' : '' }}>Monsieur</option>
                                     <option value="Mme."  {{ old('civilite',$employe->civilite) == 'Mme.' ? 'selected' : '' }}>Madame</option>
-                                    <option value="Mlle." {{ old('civilite',$employe->civilite) == 'Mlle.' ? 'selected' : '' }}>Mademoiselle</option>
                                 </select>
 
                                 @error('civilite')

@@ -10,14 +10,14 @@
                        <div class="d-flex justify-content-between">
                           <input class="form-control" id="search" type="text" placeholder="Rechercher..." style="width:350px;border-radius: 50px">
                       </div>
-                        <table class="table table-bordered" id="historiques-table">
-                                <thead style="background-color:#BBB">
+                        <table class="table table-bordered mt-2" id="historiques-table">
+                                <thead class=" bg-dark text-white">
                                   <tr>
                                     <th >Date de traitement</th>
                                     <th >Matricule</th>
                                     <th >Nom employé</th>
                                     <th >Prenoms employé</th>
-                                    <th class="td-130">Email</th>
+                                    <th class="td-130 text-left">Email</th>
                                     <th  class="td-lg">Statut</th>
                                     <th  class="td-lg">Action</th>
                                   </tr>
