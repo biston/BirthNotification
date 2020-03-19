@@ -27,7 +27,7 @@
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <div class="d-flex justify-content-center">
                         <div> <img src="{{ asset('img/logo.jpg') }}" width="150" height="35"></div>
-                        <div class="d-flex align-items-end mr-3 text-muted ml-2" >|</div>
+                        <div class="d-flex align-items-end mr-2 text-muted ml-2" >|</div>
                         <div class="d-flex align-items-end text-dark font-weight-bold"><span>{{config('app.name', 'Laravel') }}</span></div>
                     </div>
 

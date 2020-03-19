@@ -12201,6 +12201,11 @@ a.text-dark:focus {
   border: 1px solid #555;
 }
 
+.table-bordered tr {
+  height: 20px;
+  margin: 0px;
+}
+
 .td-lg {
   width: 20px;
   text-align: center;
