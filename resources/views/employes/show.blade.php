@@ -18,8 +18,8 @@
                           <div class="p-3 d-flex justify-content-center">
                               <img src="{{ asset('img').'/'.$employe->photo }}" class="rounded-circle" width="150" height="150">
                           </div>
-                          <div class="d-flex justify-content-center text-uppercase text-white font-weight-bold">
-                            <span class="mr-2" >{{ $employe->prenoms }}</span>  <span>{{ $employe->nom }}</span></div>
+                          <div class="text-uppercase text-white font-weight-bold text-center">
+                            <span>{{ $employe->prenoms }}</span>  <span>{{ $employe->nom }}</span></div>
                       </div>
 
                       <div>

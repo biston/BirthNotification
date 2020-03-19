@@ -44,13 +44,31 @@ class Employe extends Model
 
     public function getLeftDaysAttribute()
     {
-           return $this->birth_date->diffInDays(Carbon::today());
+        $inc_this=0;
+        $inc_now=0;
+        if ($this->is_bissextile($this->birth_date->format('Y'))){
+           $inc_now++;
+        }
+
+
+        if ($this->is_bissextile(now()->format('Y'))){
+            $inc_this++;
+        }
+
+
+        return ($this->birth_date->format('z')+1+$inc_this) -(now()->format('z')+1+$inc_now);
     }
 
     public function getFrBirthDateAttribute(){
         Carbon::setLocale('fr');
         $date = Carbon::parse($this->birth_date, 'UTC');
+
         return $date->isoFormat('Do MMMM');
 
+    }
+
+    private function is_bissextile($year)
+    {
+        return date("m-d", strtotime("$year-02-29")) == "02-29";
     }
 }
