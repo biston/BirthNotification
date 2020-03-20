@@ -11,6 +11,7 @@ class Historique extends Model
     protected $dates = [
         'date_traitement',
     ];
+
     public function employe(){
         return $this->belongsTo(Employe::class);
     }

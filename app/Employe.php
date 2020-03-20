@@ -44,17 +44,11 @@ class Employe extends Model
 
     public function getLeftDaysAttribute()
     {
-        $inc_this=0;
-        $inc_now=0;
-        if ($this->is_bissextile($this->birth_date->format('Y'))){
-           $inc_now++;
-        }
 
 
-        if ($this->is_bissextile(now()->format('Y'))){
-            $inc_this++;
-        }
+        $this->is_bissextile($this->birth_date->format('Y'))? $inc_now=1:$inc_now=0;
 
+        $this->is_bissextile(now()->format('Y'))? $inc_this=1:$inc_this=0;
 
         return ($this->birth_date->format('z')+1+$inc_this) -(now()->format('z')+1+$inc_now);
     }

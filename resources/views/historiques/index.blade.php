@@ -37,7 +37,10 @@
                                             @endif
                                            </td>
                                            <td>
-                                            <a href="{{ route('historiques.destroy',$historique) }}"  onclick="event.preventDefault();                                    document.getElementById('delete-historiques').submit();">
+                                            <a href="{{ route('historiques.destroy',$historique) }}"  onclick="event.preventDefault();
+                                                    if(confirm('Etes vous sur de vouloir supprimer?')){
+                                                          document.getElementById('delete-historiques').submit();
+                                                          }">
                                               <i class="fa fa-trash-o text-danger fa-lg" aria-hidden="true"></i>
                                               </a>
 

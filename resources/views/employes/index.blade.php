@@ -44,7 +44,12 @@
                                                 <a href="{{ route('employes.show',$employe) }}"><i class="fa fa-eye fa-lg mr-3 text-success" aria-hidden="true"></i></a>
                                                 <a href="{{ route('employes.edit',$employe) }}"><i class="fa fa-pencil-square-o text-primary fa-lg mr-3" aria-hidden="true"></i>
                                                 </a>
-                                                <a href="{{ route('employes.destroy',$employe) }}"  onclick="event.preventDefault();                                    document.getElementById('delete-employe').submit();">
+                                                <a href="{{ route('employes.destroy',$employe) }}"  onclick="event.preventDefault();
+                                                    if(confirm('Etes vous sur de vouloir supprimer?')){
+                                                         document.getElementById('delete-employe').submit();
+                                                    }"
+                                                  >
+
                                                  <i class="fa fa-trash-o text-danger fa-lg" aria-hidden="true"></i>
                                                  </a>
 
