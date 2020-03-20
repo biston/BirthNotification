@@ -131,7 +131,7 @@ class EmployeController extends Controller
     public function destroy($id)
     {
 
-        Historique::destroy(Employe::find($id)->historiques->pluck('id'));
+        //Historique::destroy(Employe::find($id)->historiques->pluck('id'));
         Employe::destroy($id);
 
         return redirect()->back();

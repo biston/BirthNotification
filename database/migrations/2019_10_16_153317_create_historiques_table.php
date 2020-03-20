@@ -19,6 +19,8 @@ class CreateHistoriquesTable extends Migration
             $table->string('status');
             $table->date('date_traitement');
             $table->timestamps();
+            $table->foreign('employe_id')->references('id')->on('employes')->onDelete('cascade');
+
         });
     }
 
