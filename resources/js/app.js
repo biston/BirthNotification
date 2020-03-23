@@ -12,6 +12,7 @@ import 'jquery-ui/ui/widgets/datepicker.js';
 
 
 Vue.component('Calendar', require('./components/Calendar.vue').default);
+Vue.component('Employes', require('./components/Employes.vue').default);
 
 
 

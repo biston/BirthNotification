@@ -26,7 +26,7 @@ class EmployeController extends Controller
 
     public function index()
     {
-        return view('employes.index')->with('employes',Employe::OrderBy('nom','ASC')->paginate(10));
+        return view('employes.index')->with('employes',Employe::OrderBy('nom','ASC')->paginate(2));
     }
 
     /**
