@@ -26,9 +26,29 @@ class EmployeController extends Controller
 
     public function index()
     {
-        return view('employes.index')->with('employes',Employe::OrderBy('nom','ASC')->paginate(2));
+        return view('employes.index')->with('employes',Employe::OrderBy('nom','ASC')->paginate(10));
     }
 
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request){
+
+        $request->validate([
+            'motCle' => 'required',
+        ]);
+
+        $employes=Employe::Where('nom','like','%'.$request->motCle.'%')
+                          ->OrWhere('prenoms' ,'like','%'.$request->motCle.'%')
+                          ->OrderBy('nom','ASC')
+                          ->paginate(10);
+
+        return     view('employes.index')->with('employes',$employes);
+    }
     /**
      * Show the form for creating a new resource.
      *

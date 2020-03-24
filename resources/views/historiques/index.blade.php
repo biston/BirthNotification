@@ -7,9 +7,17 @@
             <div class="card abi-border">
                 <div class="card-header bg-abi text-white text-center font-weight-bold">MES HISTORIQUES D'ENVOI</div>
                   <div class="card-body mt-4 mx-4">
-                       <div class="d-flex justify-content-between">
-                          <input class="form-control" id="search" type="text" placeholder="Rechercher..." style="width:350px;border-radius: 50px">
-                      </div>
+                    <div>
+                      <form action="{{route('historiques.search')}}" method="post" width="700px">
+                          @csrf
+                           <div class="d-flex justify-content-start">
+                                 <input class="form-control mr-2 @error('motCle') is-invalid @enderror" id="motCle" name="motCle" type="text" placeholder="Rechercher..." style="width:350px;border-radius: 50px">
+                                 <button type="submit" class="btn btn-dark btn-block font-weight-bolder mr-3" style="border-radius: 50px ;width: 120px">
+                                     <i class="fa fa-search-o" aria-hidden="true"></i>Chercher
+                                 </button>
+                           </div>
+                      </form>
+                    </div>
                         <table class="table table-bordered mt-2" id="historiques-table">
                                 <thead class=" bg-dark text-white">
                                   <tr>
@@ -74,17 +82,4 @@
     width: 80%;
 }
 </style>
-@endpush
-
-@push('extra-js')
- <script>
-    $(document).ready(function(){
-      $("#search").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#historiques-table tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-    });
-</script>
 @endpush
